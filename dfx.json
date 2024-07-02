@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "DX_Protocol_backend": {
+      "candid": "src/DX_Protocol_backend/DX_Protocol_backend.did",
+      "package": "DX_Protocol_backend",
+      "type": "rust"
+    },
+    "DX_Protocol_frontend": {
+      "dependencies": [
+        "DX_Protocol_backend"
+      ],
+      "source": [
+        "src/DX_Protocol_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "DX_Protocol_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

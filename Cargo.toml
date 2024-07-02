@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/DX_Protocol_backend"
+]
+resolver = "2"
