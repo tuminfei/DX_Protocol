@@ -9,10 +9,13 @@
 ### Milestone 1: Protocol Canister Design and Basic Functionality Implementation
 
 Objectives:
+
 Design and implement a smart contract system that supports various asset transactions, including NFTs (ICRC7), ICRC1 tokens, and ICP native tokens.
 Implement basic functionalities such as the creation, matching, and execution of Limit Orders.
 Deploy smart contracts on the DFINITY network and conduct initial testing.
+
 Tasks:
+
 Design a generic order structure that supports standardized data formats and transaction logic.
 Implement smart contract logic for the creation, matching, and execution of Limit Orders.
 Integrate security features such as signature verification, permission control, and exception handling mechanisms.
@@ -21,10 +24,13 @@ Develop modular smart contract components for future expansion to support new or
 ### Milestone 2: Order Type Expansion and Protocol Optimization
 
 Objectives:
+
 Expand support for more complex order types, including Batch Orders and Request for Quote (RFQ) orders.
 Optimize smart contracts to improve efficiency, reduce gas costs, and enhance security and reliability.
 Conduct thorough testing and security audits to ensure the stability and resilience of smart contracts.
+
 Tasks:
+
 Research and implement smart contract logic to support various order types, including different trading strategies and execution rules.
 Optimize smart contract code using best practices and optimization techniques to enhance transaction processing efficiency and user experience.
 Develop a comprehensive testing suite to cover various scenarios and edge cases, including stress testing and security vulnerability detection.
@@ -33,10 +39,13 @@ Conduct external security audits to ensure the security and resilience of smart 
 ### Milestone 3: User Interface Development and Mainnet Deployment Preparation
 
 Objectives:
+
 Design an intuitive, user-friendly frontend interface that supports users in creating, managing, and executing various types of orders.
 Provide an aggregated information query interface and integration with popular wallets to simplify user transaction processes and asset management.
 Prepare for project deployment and promotion on the mainnet to ensure a smooth launch and user experience.
+
 Tasks:
+
 Design and develop a responsive frontend interface that supports multi-device access and real-time data updates.
 Develop interfaces/integrations for easy asset and transaction management by users.
 Write user documentation and tutorials to help users get started quickly and use the platform effectively.
