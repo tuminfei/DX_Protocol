@@ -4,6 +4,88 @@
 
 `DX_Protocol` project aims to implement the 0x protocol on the DFINITY network for decentralized asset trading. The 0x protocol is a decentralized exchange protocol designed to facilitate the proliferation and transparency of decentralized trading, promoting the sharing of market information. We will support three types of orders: NFTs (ICRC7), ICRC1 tokens, and ICP native tokens, with plans to expand to more order types in the future. Through this project, users can create, match, and execute orders on the DFINITY network, enabling decentralized asset trading.
 
+## Architecture
+
+```
+                          +------------------------------+
+                          |    Frontend Interface        |
+                          |------------------------------|
+                          |   - User Interface (UI)      |
+                          |   - Wallet Integration       |
+                          |   - Query Interface          |
+                          +--------------+---------------+
+                                         |
+                                         v
+                          +--------------+---------------+
+                          |        Backend Services      |
+                          |------------------------------|
+                          |   - Order Management         |
+                          |   - Matching Engine          |
+                          |   - Transaction Processor    |
+                          +--------------+---------------+
+                                         |
+                                         v
++----------------------------------------+----------------------------------------+
+|                                DFINITY Network                                 |
+|--------------------------------------------------------------------------------|
+| +--------------------------+  +---------------------------+  +---------------+ |
+| | DX Protocol Contract     |  | DX Protocol Contract      |  | DX Protocol   | |
+| | Canisters                |  | Factory Canister          |  | Index Canister| |
+| |--------------------------|  |---------------------------|  |---------------| |
+| |  - Order Market Canister |  |  - Configure Parameters   |  | - Aggregates  | |
+| |  - Batch Order Canister  |  |  - Generate Contract      |  |   Order Info  | |
+| |  - RFQ Order Canister    |  |    Canisters              |  |   from Market | |
+| |                          |  |                           |  |   Canisters   | |
+| +--------+-----------------+  +-------------+-------------+  +---------------+ |
+|          |                                   |                                  |
+|          v                                   v                                  |
+| +--------+------------------------------------------------+-------------------+ |
+| |                   Canister Smart Contracts on ICP Blockchain                  |
+| +------------------------------------------------------+-----------------------+ |
++----------------------------------------+----------------------------------------+
+                                         |
+                                         v
+                          +--------------+---------------+
+                          |        External Services      |
+                          |------------------------------|
+                          |   - Price Oracles             |
+                          |   - External APIs             |
+                          +------------------------------+
+
+This architecture diagram offers a high-level view of how the DX Protocol will be implemented on the DFINITY network, showing the interactions between different components to support decentralized asset trading.
+```
+
+### Frontend Interface
+
+Provides users with a UI to interact with the DX Protocol, including creating, managing, and executing orders.
+Integrates wallets for transaction signing.
+Offers a query interface for real-time data and order information.
+
+### Backend Services
+
+Manages orders, processes matches, and handles transactions.
+Ensures efficient operation and interaction with the DFINITY network.
+
+### DX Protocol Contract Canisters
+
+Includes different canisters for handling Order, Batch Order, and RFQ Order markets.
+Manages the core functionalities for each order type.
+
+### DX Protocol Contract Factory Canister
+
+Configures basic DX Protocol parameters.
+Generates new DX Protocol Contract Canisters as needed.
+
+### DX Protocol Index Canister
+
+Aggregates all order information from various market canisters.
+Facilitates the aggregation of orders across different markets, enhancing market visibility and transparency.
+
+### External Services
+
+Provides additional data such as real-time prices through oracles.
+Integrates external APIs for extended functionalities.
+
 ## Milestone
 
 ### Milestone 1: Protocol Canister Design and Basic Functionality Implementation
@@ -51,7 +133,6 @@ Develop interfaces/integrations for easy asset and transaction management by use
 Write user documentation and tutorials to help users get started quickly and use the platform effectively.
 Conduct final user acceptance testing and make final adjustments and optimizations before deployment.
 Plan and execute the deployment of the project on the mainnet to ensure a smooth transition and system stability.
-
 
 ## Run Project
 
