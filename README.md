@@ -25,32 +25,32 @@
                           +--------------+---------------+
                                          |
                                          v
-+----------------------------------------+----------------------------------------+
-|                                DFINITY Network                                 |
-|--------------------------------------------------------------------------------|
-| +--------------------------+  +---------------------------+  +---------------+ |
-| | DX Protocol Contract     |  | DX Protocol Contract      |  | DX Protocol   | |
-| | Canisters                |  | Factory Canister          |  | Index Canister| |
-| |--------------------------|  |---------------------------|  |---------------| |
-| |  - Order Market Canister |  |  - Configure Parameters   |  | - Aggregates  | |
-| |  - Batch Order Canister  |  |  - Generate Contract      |  |   Order Info  | |
-| |  - RFQ Order Canister    |  |    Canisters              |  |   from Market | |
-| |                          |  |                           |  |   Canisters   | |
-| +--------+-----------------+  +-------------+-------------+  +---------------+ |
-|          |                                   |                                  |
-|          v                                   v                                  |
-| +--------+------------------------------------------------+-------------------+ |
-| |                   Canister Smart Contracts on ICP Blockchain                  |
-| +------------------------------------------------------+-----------------------+ |
-+----------------------------------------+----------------------------------------+
++----------------------------------------+-----------------------------------------+
+|                                DFINITY Network                                   |
+|----------------------------------------------------------------------------------|
+| +--------------------------+  +---------------------------+  +---------------+   |
+| | DX Protocol Contract     |  | DX Protocol Contract      |  | DX Protocol   |   |
+| | Canisters                |  | Factory Canister          |  | Index Canister|   |
+| |--------------------------|  |---------------------------|  |---------------|   |
+| |  - Order Market Canister |  |  - Configure Parameters   |  | - Aggregates  |   |
+| |  - Batch Order Canister  |  |  - Generate Contract      |  |   Order Info  |   |
+| |  - RFQ Order Canister    |  |    Canisters              |  |   from Market |   |
+| |                          |  |                           |  |   Canisters   |   |
+| +--------+-----------------+  +-------------+-------------+  +---------------+   |
+|          |                                  |                                    |
+|          v                                  v                                    |
+| +--------+------------------------------------------------+---------------------+|
+| |                   Canister Smart Contracts on ICP Blockchain                   |
+| +------------------------------------------------------+------------------------+|
++----------------------------------------+-----------------------------------------+
                                          |
                                          v
-                          +--------------+---------------+
+                          +--------------+----------------+
                           |        External Services      |
-                          |------------------------------|
+                          |-------------------------------|
                           |   - Price Oracles             |
                           |   - External APIs             |
-                          +------------------------------+
+                          +-------------------------------+
 
 This architecture diagram offers a high-level view of how the DX Protocol will be implemented on the DFINITY network, showing the interactions between different components to support decentralized asset trading.
 ```
