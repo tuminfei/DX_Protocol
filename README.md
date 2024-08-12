@@ -30,7 +30,7 @@
 |----------------------------------------------------------------------------------|
 | +--------------------------+  +---------------------------+  +---------------+   |
 | | DX Protocol Contract     |  | DX Protocol Contract      |  | DX Protocol   |   |
-| | Canisters                |  | Factory Canister          |  | Index Canister|   |
+| | Sub Canisters            |  | Main Factory Canister     |  | Index Canister|   |
 | |--------------------------|  |---------------------------|  |---------------|   |
 | |  - Order Market Canister |  |  - Configure Parameters   |  | - Aggregates  |   |
 | |  - Batch Order Canister  |  |  - Generate Contract      |  |   Order Info  |   |
@@ -54,6 +54,116 @@
 
 This architecture diagram offers a high-level view of how the DX Protocol will be implemented on the DFINITY network, showing the interactions between different components to support decentralized asset trading.
 ```
+
+## DX Protocol Canisters Structure Diagram
+
+### Main Protocol Canister
+
+Main Protocol Canister
+- APPROVED_ASSETS
+- MODULES
+- SUPPORTED_ORDER_TYPES
+- SUPPORTED_ASSET_TYPES
+
++ approve_asset()
++ register_trading_module()
++ register_order_type()
++ register_asset_type()
++ get_trading_modules()
++ is_asset_approved()
++ get_supported_order_types()
++ get_supported_asset_types()
+  
+-----------
+
+
+### Sub-Trade Canisters
+
+#### Limit Order Canister
+- ORDERS
+- NEXT_ID
+
++ create_limit_order()
++ complete_order()
++ cancel_order()
++ get_order_status()
++ verify_signature()
+  
++-----------------------------+
+  
+#### Market Order Canister
+- ORDERS
+- NEXT_ID
+
++ create_market_order()
++ complete_order()
++ cancel_order()
++ get_order_status()
++ verify_signature()
+
++-----------------------------+
+  
+#### Stop-Limit Order Canister
+- ORDERS
+- NEXT_ID
+
++ create_stop_limit_order()
++ complete_order()
++ cancel_order()
++ get_order_status()
++ verify_signature()
+
++-----------------------------+
+
+#### RFQ Order Canister
+- ORDERS
+- NEXT_ID
+
++ request_quote()
++ create_rfq_order()
++ complete_order()
++ cancel_order()
++ get_order_status()
++ verify_signature()
+
+-----------
+
+
+### **Fields and Methods**
+
+#### **Main Protocol Canister**
+
+- **Fields**
+  - `APPROVED_ASSETS`: `HashMap<Principal, bool>` — Stores approved assets.
+  - `MODULES`: `HashMap<String, TradingModule>` — Stores registered trading modules.
+  - `SUPPORTED_ORDER_TYPES`: `HashMap<String, SupportedOrderType>` — Stores supported order types.
+  - `SUPPORTED_ASSET_TYPES`: `HashMap<String, SupportedAssetType>` — Stores supported asset types.
+
+- **Methods**
+  - `approve_asset(asset: Principal) -> Result<(), String>`: Approves an asset.
+  - `register_trading_module(module_type: String, canister: Principal) -> Result<(), String>`: Registers a trading module.
+  - `register_order_type(order_type: String, description: String) -> Result<(), String>`: Registers an order type.
+  - `register_asset_type(asset_type: String, description: String) -> Result<(), String>`: Registers an asset type.
+  - `get_trading_modules() -> HashMap<String, TradingModule>`: Retrieves all registered trading modules.
+  - `is_asset_approved(asset: Principal) -> bool`: Checks if an asset is approved.
+  - `get_supported_order_types() -> HashMap<String, SupportedOrderType>`: Retrieves supported order types.
+  - `get_supported_asset_types() -> HashMap<String, SupportedAssetType>`: Retrieves supported asset types.
+
+#### **Sub-Trade Canisters**
+
+- **Fields**
+  - `ORDERS`: `HashMap<u64, Order>` — Stores order information.
+  - `NEXT_ID`: `u64` — The ID for the next order.
+
+- **Methods**
+  - `create_limit_order(asset: Principal, amount: u64, price: u64, signature: Vec<u8>) -> Result<u64, String>`: Creates a limit order.
+  - `complete_order(order_id: u64) -> Result<(), String>`: Completes an order.
+  - `cancel_order(order_id: u64) -> Result<(), String>`: Cancels an order.
+  - `get_order_status(order_id: u64) -> Result<OrderStatus, String>`: Retrieves the status of an order.
+  - `verify_signature(order: &Order) -> bool`: Verifies the signature of an order.
+
+For Market Orders, Stop-Limit Orders, and RFQ Orders, similarly implement the specific order type handling methods.
+
 
 ### Frontend Interface
 
