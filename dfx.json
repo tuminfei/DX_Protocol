@@ -1,13 +1,25 @@
 {
   "canisters": {
-    "DX_Protocol_backend": {
-      "candid": "src/DX_Protocol_backend/DX_Protocol_backend.did",
-      "package": "DX_Protocol_backend",
+    "DX_Protocol_master": {
+      "candid": "src/DX_Protocol_master/DX_Protocol_master.did",
+      "package": "DX_Protocol_master",
+      "type": "rust"
+    },
+    "DX_sub_nft_orders": {
+      "candid": "src/DX_sub_nft_orders/DX_sub_nft_orders.did",
+      "package": "DX_sub_nft_orders",
+      "type": "rust"
+    },
+    "DX_sub_token_orders": {
+      "candid": "src/DX_sub_token_orders/DX_sub_token_orders.did",
+      "package": "DX_sub_token_orders",
       "type": "rust"
     },
     "DX_Protocol_frontend": {
       "dependencies": [
-        "DX_Protocol_backend"
+        "DX_Protocol_master",
+        "DX_sub_nft_orders",
+        "DX_sub_token_orders"
       ],
       "source": [
         "src/DX_Protocol_frontend/dist"
