@@ -15,15 +15,19 @@
       "package": "DX_sub_token_orders",
       "type": "rust"
     },
+    "DX_indexer": {
+      "candid": "src/DX_indexer/DX_indexer.did",
+      "package": "DX_indexer",
+      "type": "rust"
+    },
     "DX_Protocol_frontend": {
       "dependencies": [
         "DX_Protocol_master",
         "DX_sub_nft_orders",
-        "DX_sub_token_orders"
+        "DX_sub_token_orders",
+        "DX_indexer"
       ],
-      "source": [
-        "src/DX_Protocol_frontend/dist"
-      ],
+      "source": ["src/DX_Protocol_frontend/dist"],
       "type": "assets",
       "workspace": "DX_Protocol_frontend"
     }
