@@ -2,6 +2,8 @@
 members = [
     "src/DX_Protocol_master",
     "src/DX_sub_nft_orders",
-    "src/DX_sub_token_orders"
+    "src/DX_sub_token_orders",
+    "src/DX_indexer",
+    "src/DX_Protocol_types",
 ]
 resolver = "2"

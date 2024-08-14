@@ -12,6 +12,24 @@ dependencies = [
 ]
 
 [[package]]
+name = "DX_Protocol_types"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "ic-cdk",
+ "ic-cdk-timers",
+]
+
+[[package]]
+name = "DX_indexer"
+version = "0.1.0"
+dependencies = [
+ "candid",
+ "ic-cdk",
+ "ic-cdk-timers",
+]
+
+[[package]]
 name = "DX_sub_nft_orders"
 version = "0.1.0"
 dependencies = [
