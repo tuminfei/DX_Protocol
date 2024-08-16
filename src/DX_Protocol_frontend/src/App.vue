@@ -1,13 +1,13 @@
 <script setup>
 import { ref } from 'vue';
-import { DX_Protocol_backend } from 'declarations/DX_Protocol_backend/index';
+import { DX_Protocol_master } from 'declarations/DX_Protocol_master/index';
 let greeting = ref('');
 
 async function handleSubmit(e) {
   e.preventDefault();
   const target = e.target;
   const name = target.querySelector('#name').value;
-  await DX_Protocol_backend.greet(name).then((response) => {
+  await DX_Protocol_master.greet(name).then((response) => {
     greeting.value = response;
   });
 }
