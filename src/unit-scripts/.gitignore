@@ -1,0 +1,4 @@
+node_modules
+ec-secp256k1-pub-key.pem
+.git
+.idea
