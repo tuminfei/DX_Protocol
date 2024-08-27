@@ -242,10 +242,20 @@ Conduct thorough testing and security audits to ensure the stability and resilie
 
 Tasks:
 
-Research and implement smart contract logic to support various order types, including different trading strategies and execution rules.
-Optimize smart contract code using best practices and optimization techniques to enhance transaction processing efficiency and user experience.
-Develop a comprehensive testing suite to cover various scenarios and edge cases, including stress testing and security vulnerability detection.
-Conduct external security audits to ensure the security and resilience of smart contracts, while implementing necessary improvements.
+1. Design Generic Order Structure:
+Create a standardized order structure that supports diverse data formats and transaction logic, ensuring compatibility with different asset types.
+
+2. Implement Basic Smart Contract Logic:
+Develop the core logic for creating, matching, and executing Limit Orders.
+
+3. Integrate Security Features:
+Implement signature verification, permission controls, and exception handling mechanisms to secure transactions.
+
+4. Modular Smart Contract Components:
+Design modular components to facilitate future expansion to support new order types and protocols.
+
+5. Saga-Based Transaction Engine:
+Implement a Saga pattern transaction engine to manage multi-step transactions, ensuring eventual consistency and compensating for failed steps.
 
 ### Milestone 3: User Interface Development and Mainnet Deployment Preparation
 
@@ -257,11 +267,17 @@ Prepare for project deployment and promotion on the mainnet to ensure a smooth l
 
 Tasks:
 
-Design and develop a responsive frontend interface that supports multi-device access and real-time data updates.
-Develop interfaces/integrations for easy asset and transaction management by users.
-Write user documentation and tutorials to help users get started quickly and use the platform effectively.
-Conduct final user acceptance testing and make final adjustments and optimizations before deployment.
-Plan and execute the deployment of the project on the mainnet to ensure a smooth transition and system stability.
+1. Expand Order Types:
+Research and implement smart contract logic to support Batch Orders, RFQ Orders, and other advanced order types with various trading strategies and execution rules.
+
+2. Saga Engine Refinement:
+Refine the Saga-based transaction engine to handle more complex transaction flows, including multi-party and cross-canister transactions.
+
+3. Comprehensive Testing Suite:
+Develop a comprehensive testing suite to cover various scenarios, edge cases, and stress tests, including security vulnerability detection.
+
+4. External Security Audits:
+Conduct external security audits to ensure the smart contracts and the Saga engine are secure and resilient, and implement necessary improvements based on audit findings.
 
 ## Run Project
 
