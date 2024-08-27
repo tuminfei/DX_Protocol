@@ -227,21 +227,6 @@ Deploy smart contracts on the DFINITY network and conduct initial testing.
 
 Tasks:
 
-Design a generic order structure that supports standardized data formats and transaction logic.
-Implement smart contract logic for the creation, matching, and execution of Limit Orders.
-Integrate security features such as signature verification, permission control, and exception handling mechanisms.
-Develop modular smart contract components for future expansion to support new order types and protocols.
-
-### Milestone 2: Order Type Expansion and Protocol Optimization
-
-Objectives:
-
-Expand support for more complex order types, including Batch Orders and Request for Quote (RFQ) orders.
-Optimize smart contracts to improve efficiency, reduce gas costs, and enhance security and reliability.
-Conduct thorough testing and security audits to ensure the stability and resilience of smart contracts.
-
-Tasks:
-
 1. Design Generic Order Structure:
 Create a standardized order structure that supports diverse data formats and transaction logic, ensuring compatibility with different asset types.
 
@@ -257,13 +242,13 @@ Design modular components to facilitate future expansion to support new order ty
 5. Saga-Based Transaction Engine:
 Implement a Saga pattern transaction engine to manage multi-step transactions, ensuring eventual consistency and compensating for failed steps.
 
-### Milestone 3: User Interface Development and Mainnet Deployment Preparation
+### Milestone 2: Order Type Expansion and Protocol Optimization
 
 Objectives:
 
-Design an intuitive, user-friendly frontend interface that supports users in creating, managing, and executing various types of orders.
-Provide an aggregated information query interface and integration with popular wallets to simplify user transaction processes and asset management.
-Prepare for project deployment and promotion on the mainnet to ensure a smooth launch and user experience.
+Expand support for more complex order types, including Batch Orders and Request for Quote (RFQ) orders.
+Optimize smart contracts to improve efficiency, reduce gas costs, and enhance security and reliability.
+Conduct thorough testing and security audits to ensure the stability and resilience of smart contracts.
 
 Tasks:
 
@@ -276,8 +261,34 @@ Refine the Saga-based transaction engine to handle more complex transaction flow
 3. Comprehensive Testing Suite:
 Develop a comprehensive testing suite to cover various scenarios, edge cases, and stress tests, including security vulnerability detection.
 
-4. External Security Audits:
-Conduct external security audits to ensure the smart contracts and the Saga engine are secure and resilient, and implement necessary improvements based on audit findings.
+
+### Milestone 3: User Interface Development and Mainnet Deployment Preparation
+
+Objectives:
+
+Design an intuitive, user-friendly frontend interface that supports users in creating, managing, and executing various types of orders.
+Provide an aggregated information query interface and integration with popular wallets to simplify user transaction processes and asset management.
+Prepare for project deployment and promotion on the mainnet to ensure a smooth launch and user experience.
+
+Tasks:
+
+1. Frontend Interface Design and Development:
+Design and develop a responsive frontend interface that supports multi-device access and real-time data updates.
+
+2. User-Friendly Interfaces/Integrations:
+Develop interfaces for easy asset and transaction management, including integrations with popular wallets.
+
+3. Saga Engine Integration:
+Integrate the Saga-based transaction engine into the user interface, allowing users to initiate and manage complex transactions with confidence.
+
+4. User Documentation and Tutorials:
+Write comprehensive user documentation and create tutorials to help users get started quickly and use the platform effectively.
+
+5. Final Testing and Optimization:
+Conduct final user acceptance testing, including testing the Saga engine under various scenarios, and make final adjustments and optimizations before deployment.
+
+6. Mainnet Deployment and Promotion:
+Plan and execute the deployment of the project on the mainnet, ensuring a smooth transition, system stability, and successful promotion to attract users.
 
 ## Run Project
 
