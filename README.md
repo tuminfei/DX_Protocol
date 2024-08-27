@@ -164,6 +164,25 @@ Main Protocol Canister
 
 For Market Orders, Stop-Limit Orders, and RFQ Orders, similarly implement the specific order type handling methods.
 
+### Transaction Engine
+
+To implement a Saga pattern-based transaction engine on the Internet Computer (IC) for the DX protocol, the approach involves breaking down a complex transaction into multiple smaller sub-transactions, each with its own compensating action. The Saga pattern ensures eventual consistency by executing these sub-transactions sequentially and, if a failure occurs, rolling back the already executed transactions by invoking the corresponding compensating actions.
+
+#### Key Components:
+
+Saga Coordinator:
+
+The Saga Coordinator manages the lifecycle of a transaction, including the execution of sub-transactions and the initiation of compensation in case of failure.
+It tracks the progress of the transaction, ensuring that each step is executed correctly, and handles errors by triggering compensating actions.
+
+Sub-Transactions:
+
+Each sub-transaction represents a discrete step in the overall transaction process. It is designed to be idempotent, meaning it can be safely re-executed without causing inconsistent states.
+Each sub-transaction is paired with a compensating action that can undo the changes made if the transaction needs to be rolled back.
+
+Compensation:
+
+Compensation operations are triggered when a sub-transaction fails. These operations are designed to reverse the changes made by previous sub-transactions, bringing the system back to a consistent state.
 
 ### Frontend Interface
 
