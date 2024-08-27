@@ -35,7 +35,7 @@
 | |  - Order Market Canister |  |  - Configure Parameters   |  | - Aggregates  |   |
 | |  - Batch Order Canister  |  |  - Generate Contract      |  |   Order Info  |   |
 | |  - RFQ Order Canister    |  |    Canisters              |  |   from Market |   |
-| |                          |  |                           |  |   Canisters   |   |
+| |  - Transaction Engine    |  |                           |  |   Canisters   |   |
 | +--------+-----------------+  +-------------+-------------+  +---------------+   |
 |          |                                  |                                    |
 |          v                                  v                                    |
@@ -168,7 +168,7 @@ For Market Orders, Stop-Limit Orders, and RFQ Orders, similarly implement the sp
 
 To implement a Saga pattern-based transaction engine on the Internet Computer (IC) for the DX protocol, the approach involves breaking down a complex transaction into multiple smaller sub-transactions, each with its own compensating action. The Saga pattern ensures eventual consistency by executing these sub-transactions sequentially and, if a failure occurs, rolling back the already executed transactions by invoking the corresponding compensating actions.
 
-#### Key Components:
+#### Key Components
 
 Saga Coordinator:
 
